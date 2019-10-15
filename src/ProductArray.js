@@ -2,13 +2,9 @@ export class ProductArray {
     constructor(productArray) {
         this.products = productArray.slice();
         this.previousSetOfProducts = '';
+        this.currentSetOfProducts = '';
     }
-
-    getRandomProduct() {
-        const randomProduct = this.products[Math.floor(Math.random() * this.products.length)];
-        return randomProduct;
-    }
-
+    
     findById(id, arrayToSearch) {
         for (let i = 0; i < arrayToSearch.length; i++) {
             if (arrayToSearch[i].id === id) {
@@ -16,7 +12,12 @@ export class ProductArray {
             }
         }
         return null;
-    };
+    }
+
+    getRandomProduct() {
+        const randomProduct = this.products[Math.floor(Math.random() * this.products.length)];
+        return randomProduct;
+    }
 
     getThreeProducts() {
         let obj1 = this.getRandomProduct();
@@ -33,7 +34,22 @@ export class ProductArray {
         while (obj1.id === obj2.id || obj1.id === obj3.id || obj2.id === obj3.id) {
             this.getThreeProducts();
         }
+
+        this.currentSetOfProducts = randomProductArray;
         return randomProductArray;
     }
 
+    setPreviousSet(previousSetArray) {
+        this.previousSetOfProducts = previousSetArray;
+    }
+
+    renderSet() {
+        const imageArea1 = document.getElementById('img-1');
+        const imageArea2 = document.getElementById('img-2');
+        const imageArea3 = document.getElementById('img-3');
+
+        imageArea1.src = this.currentSetOfProducts[0].image;
+        imageArea2.src = this.currentSetOfProducts[1].image;
+        imageArea3.src = this.currentSetOfProducts[2].image;
+    }
 }   
