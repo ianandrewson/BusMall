@@ -1,0 +1,12 @@
+#image-area {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    box-sizing: border-box;
+    height: 400px;
+    width: 400px;
+    margin: 10px;
+}
