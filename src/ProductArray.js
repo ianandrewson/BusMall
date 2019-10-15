@@ -4,6 +4,13 @@ export class ProductArray {
         this.previousSetOfProducts = '';
         this.currentSetOfProducts = '';
     }
+
+    intializeProductScores() {
+        this.products.forEach(product => {
+            product.productPickedScore = 0;
+            product.productShownScore = 0;
+        });
+    }
     
     findById(id, arrayToSearch) {
         for (let i = 0; i < arrayToSearch.length; i++) {
@@ -45,11 +52,20 @@ export class ProductArray {
 
     renderSet() {
         const imageArea1 = document.getElementById('img-1');
+        const imageValue1 = document.getElementById('imgVal1');
         const imageArea2 = document.getElementById('img-2');
+        const imageValue2 = document.getElementById('imgVal2');
         const imageArea3 = document.getElementById('img-3');
+        const imageValue3 = document.getElementById('imgVal3');
 
         imageArea1.src = this.currentSetOfProducts[0].image;
+        imageValue1.value = this.currentSetOfProducts[0].id;
         imageArea2.src = this.currentSetOfProducts[1].image;
+        imageValue2.value = this.currentSetOfProducts[1].id;
         imageArea3.src = this.currentSetOfProducts[2].image;
+        imageValue3.value = this.currentSetOfProducts[2].id;
+        imageValue1.checked = false;
+        imageValue2.checked = false;
+        imageValue3.checked = false;
     }
 }   

@@ -10,7 +10,7 @@ Data form for images: write an API - DONE
 Get random images: -DONE
     Need 3 non duplicated images 
         Pays attention to previous image round as well - 
-Display Side by side
+Display Side by side - DONE
     Need HTML to display image in
 Click to vote functionality - See event handler section at bottom
     Store as an object
@@ -41,8 +41,9 @@ HTML:
     result display area
     reset/next session button in result area
 
-click eventListener
-    store vote
-    store # of times displayed for all items
-    generate next set
+click eventListener - getting there; need to add radio buttons to images. Images have no way of storing a value, so it is not possible to increment a score just by selecting an image. There needs to be a value to get the product to increment the score.
+
+    store vote - DONE
+    store # of times displayed for all items - DONE
+    generate next set - NEXT
         stop after 25 sets
