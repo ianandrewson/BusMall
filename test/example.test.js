@@ -18,3 +18,19 @@ test('should return a random object', function(assert) {
     // Make assertions about what is expected valid result
     assert.equal(result, expected);
 });
+
+test('should return 3 unique random objects', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const products = new ProductArray(storeArray);
+    const expected = true;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    
+    const threeObjs = products.getThreeProducts()
+    const result = (threeObjs[0].id !== threeObjs[1].id && threeObjs[0].id !== threeObjs[2].id && threeObjs[1].id !== threeObjs[2].id);
+    //Assert
+    // Make assertions about what is expected valid result
+    assert.equal(result, expected);
+});
