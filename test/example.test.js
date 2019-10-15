@@ -28,7 +28,7 @@ test('should return 3 unique random objects', function(assert) {
     //Act 
     // Call the function you're testing and set the result to a const
     
-    const threeObjs = products.getThreeProducts()
+    const threeObjs = products.getThreeProducts();
     const result = (threeObjs[0].id !== threeObjs[1].id && threeObjs[0].id !== threeObjs[2].id && threeObjs[1].id !== threeObjs[2].id);
     //Assert
     // Make assertions about what is expected valid result
