@@ -7,9 +7,9 @@ Data form for images: write an API - DONE
     image - path to image
     name - display name
 
-Get random images:
-    Need 3 non duplicated images
-        Pays attention to previous image round as well
+Get random images: -DONE
+    Need 3 non duplicated images 
+        Pays attention to previous image round as well - 
 Display Side by side
     Need HTML to display image in
 Click to vote functionality - See event handler section at bottom
