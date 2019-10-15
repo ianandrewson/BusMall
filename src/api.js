@@ -84,7 +84,7 @@ const shark = {
 
 const sweep = {
     id: 'sweep',
-    image: '../assets/sweep.jpg',
+    image: '../assets/sweep.png',
     name: 'Baby Mop Onesie'
 };
 
@@ -102,7 +102,7 @@ const unicorn = {
 
 const usb = {
     id: 'usb',
-    image: '../assets/usb.jpg',
+    image: '../assets/usb.gif',
     name: 'Moving Tentacle USB Stick'
 };
 
