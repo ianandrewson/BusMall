@@ -1,8 +1,11 @@
 User Stories - DONE
 
-HTML Skeleton - see HTML section at bottom
+HTML Skeleton - see HTML section at bottom - DONE
 
-Data form for images: write an API
+Data form for images: write an API - DONE
+    id - identifier
+    image - path to image
+    name - display name
 
 Get random images:
     Need 3 non duplicated images
