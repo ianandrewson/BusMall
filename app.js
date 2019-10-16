@@ -4,7 +4,7 @@ import { storeArray } from './src/api.js';
 const busMallStore = new ProductArray(storeArray);
 let setCount = 1;
 const imageParent = document.getElementById('image-area');
-const resetButton = document.getElementById('reset');
+//const resetButton = document.getElementById('reset');
 busMallStore.intializeProductScores();
 
 busMallStore.getThreeProducts();
