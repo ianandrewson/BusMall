@@ -1,3 +1,5 @@
+import { renderTableRow } from './utils.js';
+
 export class ProductArray {
     constructor(productArray) {
         this.products = productArray.slice();
@@ -26,22 +28,42 @@ export class ProductArray {
         return randomProduct;
     }
 
+    isNotUnique(obj1, obj2, obj3) {
+        if (obj1.id === obj2.id || obj1.id === obj3.id || obj2.id === obj3.id) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    wasInLastSet(currentArray, previousArray) {
+        currentArray.forEach(element => {
+            if (this.findById(element, previousArray)){
+                return true;
+            } else {
+                return false;
+            }
+        });
+    }
+
     getThreeProducts() {
         let obj1 = this.getRandomProduct();
         let obj2 = this.getRandomProduct();
         let obj3 = this.getRandomProduct();
         let randomProductArray = [obj1, obj2, obj3];
-        //Check to see if any products were in the previous set
-        randomProductArray.forEach(element => {
-            if (this.findById(element.id, this.previousSetOfProducts)) {
-                this.getThreeProducts();
-            }
-        });
-        //Check to make sure products are unique
-        while (obj1.id === obj2.id || obj1.id === obj3.id || obj2.id === obj3.id) {
-            this.getThreeProducts();
+        if (!this.wasInLastSet(randomProductArray, this.previousSetOfProducts) && !this.isNotUnique(obj1, obj2, obj3)) {
+            this.currentSetOfProducts = randomProductArray;
+            return randomProductArray;
         }
 
+        //Check to see if any products were in the previous set
+        if (this.wasInLastSet(randomProductArray, this.previousSetOfProducts)) {
+            randomProductArray = this.getThreeProducts();
+        }
+        //Check to make sure products are unique
+        if (this.isNotUnique(obj1, obj2, obj3)){
+            randomProductArray = this.getThreeProducts();
+        }
         this.currentSetOfProducts = randomProductArray;
         return randomProductArray;
     }
@@ -67,5 +89,18 @@ export class ProductArray {
         imageValue1.checked = false;
         imageValue2.checked = false;
         imageValue3.checked = false;
+    }
+    displayResults() {
+        let toHide = document.querySelectorAll('img');
+        toHide.forEach(el => {
+            el.classList.add('hidden');
+        });
+
+        const toShow = document.getElementById('result-area');
+        toShow.classList.remove('hidden');
+        toShow.classList.add('visible');
+        this.products.forEach(el => {
+            renderTableRow(el);
+        });
     }
 }   

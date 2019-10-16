@@ -2,12 +2,14 @@ import { ProductArray } from './src/ProductArray.js';
 import { storeArray } from './src/api.js';
 
 const busMallStore = new ProductArray(storeArray);
+let setCount = 1;
+const imageParent = document.getElementById('image-area');
+const resetButton = document.getElementById('reset');
 busMallStore.intializeProductScores();
+
 busMallStore.getThreeProducts();
 busMallStore.renderSet();
 
-
-const imageParent = document.getElementById('image-area');
 imageParent.addEventListener('change', e => {
     const targetValue = e.target.value;
     e.preventDefault();
@@ -17,5 +19,11 @@ imageParent.addEventListener('change', e => {
     busMallStore.currentSetOfProducts.forEach(product => {
         busMallStore.findById(product.id, busMallStore.products).productShownScore++;
     });
-    console.log(busMallStore.findById(targetValue, busMallStore.products));
+    if (setCount < 25) {
+        setCount++;
+        busMallStore.getThreeProducts();
+        busMallStore.renderSet();
+    } else {
+        busMallStore.displayResults();
+    }
 });

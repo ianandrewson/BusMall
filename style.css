@@ -11,6 +11,18 @@ img {
     margin: 10px;
 }
 
-/* #FAKE {
-    visibility: hidden;
-} */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+input {
+    display: none;
+}
+
+td {
+    border: 1px black dotted;
+}
