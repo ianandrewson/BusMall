@@ -5,6 +5,11 @@ export class ProductArray {
         this.products = productArray.slice();
         this.previousSetOfProducts = '';
         this.currentSetOfProducts = '';
+        this.setCount = 1;
+    }
+
+    getProductArray() {
+        return this.products;
     }
 
     intializeProductScores() {
@@ -64,6 +69,7 @@ export class ProductArray {
         if (this.isNotUnique(obj1, obj2, obj3)){
             randomProductArray = this.getThreeProducts();
         }
+        this.previousSetOfProducts = randomProductArray;
         this.currentSetOfProducts = randomProductArray;
         return randomProductArray;
     }

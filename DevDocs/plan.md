@@ -9,41 +9,40 @@ Data form for images: write an API - DONE
 
 Get random images: -DONE
     Need 3 non duplicated images 
-        Pays attention to previous image round as well - 
+        Pays attention to previous image round as well - DONE
 Display Side by side - DONE
-    Need HTML to display image in
-Click to vote functionality - See event handler section at bottom
-    Store as an object
-        Need to track votes for 25 set session
-        Need to track how many times item was displayed
-    Stretch: track for all sessions
-Display results after 25 sets shown
-    Hide images to prevent further voting
-    Need HTML area to display results
+    Need HTML to display image in - DONE
+Click to vote functionality - See event handler section at bottom - DONE
+    Store as an object - DONE
+        Need to track votes for 25 set session - DONE
+        Need to track how many times item was displayed - DONE
+    Stretch: track for all sessions - DONE
+Display results after 25 sets shown - DONE
+    Hide images to prevent further voting - DONE
+    Need HTML area to display results - DONE
     display results function
-        Times displayed
-        Number of votes
-    Reset button
-        Store results to localStorage for long term tracking
-        Start next set of images
-            If page is reloaded, should reset current session
+        Times displayed DONE
+        Number of votes DONE
+    Reset button - DONE
+        Store results to localStorage for long term  tracking - DONE
+        Start next set of images - DONE
+            If page is reloaded, should reset current session - DONE
 
-Stretch Goal:
+Stretch Goal: TODO
     Separate page for long term results;
         Iterate through session results, create totals
         Display results
 
 
 
-HTML:
-    Directions for User
-    three images
-    result display area
-    reset/next session button in result area
+HTML: - DONE
+    Directions for User - DONE
+    three images - DONE
+    result display area - DONE
+    reset/next session button in result  - DONE
 
-click eventListener - getting there; need to add radio buttons to images. Images have no way of storing a value, so it is not possible to increment a score just by selecting an image. There needs to be a value to get the product to increment the score.
-
+click eventListener - DONE
     store vote - DONE
     store # of times displayed for all items - DONE
-    generate next set - NEXT
-        stop after 25 sets
+    generate next set - DONE
+        stop after 25 sets - DONE

@@ -1,4 +1,5 @@
 import { storeArray } from './api.js';
+import { ProductArray } from './ProductArray.js';
 
 export const getRandomImage = () => {
     return storeArray[Math.floor(Math.random() * storeArray.length)];
@@ -21,4 +22,12 @@ export const renderTableRow = (productObject) => {
     newTableRow.appendChild(timesPicked);
 
     tableToAppendTo.appendChild(newTableRow);
+};
+
+export const intializeSurvey = () => {
+    let busMallStore = new ProductArray(storeArray);
+    busMallStore.intializeProductScores();
+
+    busMallStore.getThreeProducts();
+    busMallStore.renderSet();
 };
