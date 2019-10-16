@@ -26,3 +26,8 @@ input {
 td {
     border: 1px black dotted;
 }
+
+canvas {
+    width: 75%;
+    height: 500px;
+  }
