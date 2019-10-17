@@ -1,5 +1,8 @@
 import { ProductArray } from './src/ProductArray.js';
 import { storeArray } from './src/api.js';
+import { generateShownChart } from './src/chart.js';
+import { generateClickedChart } from './src/chart.js';
+
 
 let busMallStore = new ProductArray(storeArray);
 busMallStore.intializeProductScores();
@@ -24,6 +27,8 @@ imageParent.addEventListener('change', e => {
         busMallStore.renderSet();
     } else {
         busMallStore.displayResults();
+        generateShownChart(busMallStore.products);
+        generateClickedChart(busMallStore.products);
     }
 });
 

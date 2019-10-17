@@ -106,7 +106,9 @@ export class ProductArray {
         toShow.classList.remove('hidden');
         toShow.classList.add('visible');
         this.products.forEach(el => {
-            renderTableRow(el);
+            if (el.productShownScore > 0) {
+                renderTableRow(el);
+            }
         });
     }
 }   
