@@ -55,7 +55,6 @@ export class ProductArray {
         let obj2 = this.getRandomProduct();
         let obj3 = this.getRandomProduct();
         let randomProductArray = [obj1, obj2, obj3];
-        console.log(this.wasInLastSet(randomProductArray, this.previousSetOfProducts));
         if (!this.wasInLastSet(randomProductArray, this.previousSetOfProducts) && !this.isNotUnique(obj1, obj2, obj3)) {
             this.currentSetOfProducts = randomProductArray;
             return randomProductArray;
