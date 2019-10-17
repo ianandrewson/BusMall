@@ -42,13 +42,12 @@ export class ProductArray {
     }
 
     wasInLastSet(currentArray, previousArray) {
-        currentArray.forEach(element => {
-            if (this.findById(element, previousArray)){
+        for (let i = 0; i < currentArray.length; i++) {
+            if (this.findById(currentArray[i].id, previousArray)){
                 return true;
-            } else {
-                return false;
             }
-        });
+        }
+        return false;
     }
 
     getThreeProducts() {
@@ -56,6 +55,7 @@ export class ProductArray {
         let obj2 = this.getRandomProduct();
         let obj3 = this.getRandomProduct();
         let randomProductArray = [obj1, obj2, obj3];
+        console.log(this.wasInLastSet(randomProductArray, this.previousSetOfProducts));
         if (!this.wasInLastSet(randomProductArray, this.previousSetOfProducts) && !this.isNotUnique(obj1, obj2, obj3)) {
             this.currentSetOfProducts = randomProductArray;
             return randomProductArray;
@@ -69,7 +69,6 @@ export class ProductArray {
         if (this.isNotUnique(obj1, obj2, obj3)){
             randomProductArray = this.getThreeProducts();
         }
-        this.previousSetOfProducts = randomProductArray;
         this.currentSetOfProducts = randomProductArray;
         return randomProductArray;
     }
