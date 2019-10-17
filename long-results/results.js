@@ -1,4 +1,6 @@
 import * as utils from '../src/utils.js';
+import { generateShownChart } from '../src/chart.js';
+import { generateClickedChart } from '../src/chart.js';
 
 const longResults = JSON.parse(localStorage.getItem('surveyResults'));
 let longScores = [];
@@ -21,3 +23,5 @@ longResults.forEach(surveySet => {
 longScores.forEach(el => {
     utils.renderTableRow(el);
 });
+generateShownChart(longScores);
+generateClickedChart(longScores);
