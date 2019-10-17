@@ -42,13 +42,12 @@ export class ProductArray {
     }
 
     wasInLastSet(currentArray, previousArray) {
-        currentArray.forEach(element => {
-            if (this.findById(element, previousArray)){
+        for (let i = 0; i < currentArray.length; i++) {
+            if (this.findById(currentArray[i].id, previousArray)){
                 return true;
-            } else {
-                return false;
             }
-        });
+        }
+        return false;
     }
 
     getThreeProducts() {
@@ -69,7 +68,6 @@ export class ProductArray {
         if (this.isNotUnique(obj1, obj2, obj3)){
             randomProductArray = this.getThreeProducts();
         }
-        this.previousSetOfProducts = randomProductArray;
         this.currentSetOfProducts = randomProductArray;
         return randomProductArray;
     }

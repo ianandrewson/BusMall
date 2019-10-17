@@ -23,6 +23,7 @@ imageParent.addEventListener('change', e => {
     });
     if (busMallStore.setCount < 25) {
         busMallStore.setCount++;
+        busMallStore.setPreviousSet(busMallStore.currentSetOfProducts);
         busMallStore.getThreeProducts();
         busMallStore.renderSet();
     } else {
